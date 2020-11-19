@@ -4,8 +4,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    ports:
-      - "8081:3000"
+    expose:
+      - "3000"
     environment:
       - NODE_ENV=production
     container_name: appcheese
