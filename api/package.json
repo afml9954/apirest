@@ -1,0 +1,24 @@
+{
+  "name": "node-sequelize",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "migrate_docker": "npx sequelize-cli db:migrate",
+    "migrate": "sequelize-cli db:migrate",
+    "play": "node ./bin/www",
+    "start": "npm run migrate && npm run play",
+    "start_docker": "npm run migrate_docker && npm run play"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.5",
+    "debug": "^4.1.1",
+    "ejs": "^3.1.3",
+    "express": "^4.17.1",
+    "http-errors": "^1.8.0",
+    "morgan": "^1.10.0",
+    "pg": "^8.4.1",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^6.3.5",
+    "sequelize-cli": "^6.2.0"
+  }
+}
