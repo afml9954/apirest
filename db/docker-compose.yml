@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+   db:
+    image: postgres:13
+    environment:
+      - POSTGRES_DB=cheese
+      - POSTGRES_USER=cheese
+      - POSTGRES_PASSWORD=cheese
+    ports:
+      - "5432:5432"
+    container_name: dbpostgres
+    volumes:
+      - "/home/volumes/pg:/var/lib/postgresql/data"
+
