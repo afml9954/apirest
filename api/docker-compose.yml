@@ -1,11 +1,37 @@
 version: "3.8"
 services:
-  api:
+  api1:
     build:
       context: .
       dockerfile: Dockerfile
-    expose:
-      - "3000"
+    ports:
+      - "8090:3000"
+    environment:
+      - NODE_ENV=production
+    container_name: appcheese
+    command: npx sequelize-cli db:migrate
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+  api2:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8091:3000"
+    environment:
+      - NODE_ENV=production
+    container_name: appcheese
+    command: npx sequelize-cli db:migrate
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+  api3:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8092:3000"
     environment:
       - NODE_ENV=production
     container_name: appcheese
