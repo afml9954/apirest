@@ -9,7 +9,7 @@ services:
     environment:
       - NODE_ENV=production
     container_name: app1cheese
-    command: bash -c "npx sequelize-cli db:migrate"
+    command: npm sequelize-cli db:migrate
     volumes:
       - .:/usr/src/app
       - /usr/src/app/node_modules
@@ -22,7 +22,7 @@ services:
     environment:
       - NODE_ENV=production
     container_name: app2cheese
-    command: bash -c "npx sequelize-cli db:migrate"
+    command: npm sequelize-cli db:migrate
     volumes:
       - .:/usr/src/app
       - /usr/src/app/node_modules
@@ -35,7 +35,7 @@ services:
     environment:
       - NODE_ENV=production
     container_name: app3cheese
-    command: bash -c "npx sequelize-cli db:migrate"
+    command: npm sequelize-cli db:migrate
     volumes:
       - .:/usr/src/app
       - /usr/src/app/node_modules
